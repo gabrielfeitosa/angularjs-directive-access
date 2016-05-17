@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="acesso">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Blog do Gabriel Feitosa</title>
+    <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+    <style>
+        .block {
+            margin-left: 5px;
+            color: red;
+        }
+        
+        a[disabled] {
+            pointer-events: none;
+        }
+        
+        td {
+            padding: 5px
+        }
+    </style>
+</head>
+
+<body>
+    <h1>AngularJS: Diretivas de acesso</h1>
+    <table>
+        <tr>
+            <td>
+                <button acesso permissao="block" onclick="alert('Ops, deu errado!')">Botão com restrição de acesso</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="http://gabrielfeitosa.com" acesso permissao="block">Link com restrição de acesso</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button acesso permissao="no-block" onclick="alert('Ops, botão liberado!')">Botão sem restrição de acesso</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="http://gabrielfeitosa.com" acesso permissao="no-block" target="_blank">Link sem restrição de acesso</a>
+            </td>
+        </tr>
+    </table>
+
+    <footer>
+        <hr/>
+        <a href="http://gabrielfeitosa.com"> Blog do Gabriel Feitosa</a>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
