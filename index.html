@@ -5,31 +5,49 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <title>Blog do Gabriel Feitosa</title>
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <style>
+        .block {
+            margin-left: 5px;
+            color: red;
+        }
+        
+        a[disabled] {
+            pointer-events: none;
+        }
+        
+        td {
+            padding: 5px
+        }
+    </style>
 </head>
 
 <body>
-    <h1>AngularJS: Diretivas de acesso</h1>
+    <h1>AngularJS: Diretiva de acesso</h1>
     <table>
+        <th>
+            <tr>
+                <td></td>
+                <td>Botão</td>
+                <td>Link</td>
+            </tr>
+        </th>
         <tr>
+            <td>Com Restrição</td>
             <td>
-                <button acesso permissao="block" onclick="alert('Ops, deu errado!')">Botão com restrição de acesso</button>
+                <button permissao-acesso="block" onclick="alert('Ops, deu errado!')">Botão</button>
+            </td>
+            <td>
+                <a href="" permissao-acesso="block" onclick="alert('Ops, deu errado!')">Link</a>
             </td>
         </tr>
         <tr>
+            <td>Sem Restrição</td>
             <td>
-                <a href="http://gabrielfeitosa.com" acesso permissao="block">Link com restrição de acesso</a>
+                <button permissao-acesso="no-block" onclick="alert('Aeee \\o/, botão liberado!')">Botão</button>
             </td>
-        </tr>
-        <tr>
             <td>
-                <button acesso permissao="no-block" onclick="alert('Ops, botão liberado!')">Botão sem restrição de acesso</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="http://gabrielfeitosa.com" acesso permissao="no-block" target="_blank">Link sem restrição de acesso</a>
+                <a href="" permissao-acesso="no-block" onclick="alert('Aeee \\o/, link liberado!')">Link</a>
             </td>
         </tr>
     </table>

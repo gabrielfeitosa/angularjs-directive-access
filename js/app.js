@@ -1,11 +1,12 @@
 (function(){
     
     angular.module('acesso',[])
-    .directive('acesso', function(){
+    .directive('permissaoAcesso', function(){
         return {
             restrict: 'A',
             link: function ($scope, element, attrs) {
-                if (attrs.permissao === 'block') {
+                console.log(element);
+                if (attrs.permissaoAcesso === 'block') {
                     element.attr('disabled', 'disabled');
                     element.append('<span class="block fa fa-lock"></span>');
                 }
